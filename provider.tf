@@ -1,0 +1,19 @@
+#set the terrform providers 
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 6.0"
+    }
+  }
+}
+# connect to the provide cloud
+provider "aws" {
+  region     = "us-east-1"
+  access_key = var.AWS_ACCESS_KEY
+  secret_key = var.AWS_SECRET_KEY
+  #token = var.token
+}
+
+variable "AWS_ACCESS_KEY" {}
+variable "AWS_SECRET_KEY" {}
